@@ -36,6 +36,8 @@ ghc-options:
 
 library:
   source-dirs: src
+  exposed-modules:
+    - Suggest
 
 executables:
   haskell-random-exe:

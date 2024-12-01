@@ -25,8 +25,9 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Suggest
   other-modules:
+      Lib
       Paths_haskell_random
   autogen-modules:
       Paths_haskell_random
