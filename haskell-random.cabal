@@ -36,6 +36,7 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , mtl
     , random
   default-language: Haskell2010
 
@@ -51,6 +52,7 @@ executable haskell-random-exe
   build-depends:
       base >=4.7 && <5
     , haskell-random
+    , mtl
     , random
   default-language: Haskell2010
 
@@ -67,5 +69,6 @@ test-suite haskell-random-test
   build-depends:
       base >=4.7 && <5
     , haskell-random
+    , mtl
     , random
   default-language: Haskell2010

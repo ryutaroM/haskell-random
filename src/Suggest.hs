@@ -1,7 +1,8 @@
-module Suggest (s) where
+module Suggest (s, threeCoins) where
 
 import Control.Monad (when)
-import System.Random (Random (randomR), StdGen, getStdGen)
+import Control.Monad.State
+import System.Random (Random (randomR), RandomGen, StdGen, getStdGen, mkStdGen, random)
 
 s :: IO ()
 s = do
@@ -19,3 +20,13 @@ askForNumber gen = do
       then putStrLn "You are correct!"
       else putStrLn $ "Sorry, it was " ++ show randNumber
     askForNumber newGen
+
+randomSt :: (RandomGen g, Random a) => State g a
+randomSt = state random
+
+threeCoins :: State StdGen (Bool, Bool, Bool)
+threeCoins = do
+  a <- randomSt
+  b <- randomSt
+  c <- randomSt
+  return (a, b, c)
